@@ -3,9 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.min.css">
+    <title>Go Installer</title>
+    <style>
+        .hero-skew {
+            transform-origin: top right;
+            transform: skewY(8deg);
+        }
+
+        .container-skew{
+            transform: skewY(-8deg);
+        }
+
+        .title.is-full{
+            font-size: 50pt;
+        }
+
+        code{
+            background-color: rgb(41, 41, 41);
+            color: white;
+        }
+
+        .footer{
+            background: url(./go-icon.svg) no-repeat;
+            background-size: 120px;
+            background-position-x: 6px;
+            background-position-y: 15px;
+        }
+    </style>
 </head>
 <body>
-    <h1>GO (installer)</h1>
+    <section class="hero-skew hero is-info is-fullheight">
+        <div class="hero-body"> 
+          <div class="container container-skew has-text-centered is-unselectable">
+            <div class="columns is-centered is-gapless">
+                <div class="column"></div>
+                <div class="column is-5">  
+                    <img src="go-icon.svg" alt="go-image" style="width: 96px;">
+               <br><br>
+                <div class="box">
+                    <h1 class="title is-full has-text-dark">GO Installer</h1>
+                </div>
+                <h1 class="subtitle is-4">
+                    The easiest way to <b>install</b>, <b>remove</b> and <b>update</b> golang on linux
+                </h1>
+                <a href="https://github.com/brunosoouza/GO-installer" 
+                class="button is-inverted is-outlined is-dark is-rounded" target="_blank">
+                    see on Github
+                </a>
+            </div>
+                <div class="column"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+          <div class="hero">
+              <div class="hero-body">
+                  <div class="container">
+                    <div class="card">
+                        <div class="card-content">
+                            <h1 class="title has-text-info: ">
+                                1. Starting GO installer operations 😉
+                              </h1>
+                              <b>First</b>: Run the following command
+                              <br>
+                              <br>
+                            <code>
+                                <span class="has-text-success"><b>$</b></span> 
+                                <span class="codigo">
+                                    git clone https://github.com/brunosoouza/GO-installer.git && cd GO-installer/
+                                </span>
+                            </code>
+                            <br>
+                            <br>
+                            <button class="button is-light is-outlined is-inverted">copy</button>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="card-content">
+                            <h1 class="title has-text-info: ">
+                                2. In that directory, select the folder with your language 😍
+                              </h1>
+                              <b>And</b>: Run the command
+                              <br>
+                              <br>
+                            <code>
+                                <span class="has-text-success"><b>$</b></span>
+                                 <span class="codigo">
+                                    chmod 755 insdex.sh && ./index.sh
+                                </span>
+                            </code>
+                            <br>
+                            <br>
+                            <button class="button is-light is-outlined is-inverted">copy</button>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <section>
+          <div class="hero is-light is-medium">
+              <div class="hero-body">
+                  <div class="container has-text-centered">
+                      <h1 class="title is-1">
+                          Done! 🤩
+                      </h1>
+                      <hr>
+                      <span>
+                        If everything went well, you must have golang installed correctly on your machine.
+                      </span> 
+                  </div>
+              </div>
+          </div>
+      </section>
+      <section>
+          <div class="hero is-medium">
+              <div class="hero-body">
+                  <div class="container has-text-centered">
+                      <h1 class="title">
+                        Other resources available
+                      </h1>
+                      <br>
+                      <br>
+                      <div class="columns centered">
+                          <div class="column"></div>
+                          <div class="column is-4 is-unselectable">
+                            <div class="notification is-gray is-light box">
+                            <h1 class="subtitle is-5"><b>Update Golang</b></h1>
+                                <img src="update.svg" alt="update" style="width: 128px;">
+                                </div>
+
+                            </div>
+                          <div class="column is-4 is-unselectable">
+                            <div class="notification is-gray is-light box">
+                                <h1 class="subtitle is-5 "><b>Remove Golang</b></h1>
+                                <img src="delete.svg" alt="delete" style="width: 128px;">
+                            </div>
+                        </div>
+                          <div class="column"></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <footer class="footer notification is-link">
+          <div class="content has-text-centered">
+              <span>2020 - GO - Installer</span>
+              <br>
+            <strong>Built with</strong>
+            <span class="subtitle has-text-danger is-4">❤</span> by
+            <span><a href="https://github.com/brunosoouza/" target="_blank">Bruno Souza</a></span>
+          </div>
+      </footer>
 </body>
 </html>
