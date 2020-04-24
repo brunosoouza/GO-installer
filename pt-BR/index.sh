@@ -21,8 +21,7 @@ else
     read -p "> " resposta
     
     case $resposta in 
-    1) source desinstalargo.sh 
-       verificaAntesDeDesinstalar
+    1) verificaAntesDeDesinstalar
     ;;
     2)  echo "atualizando go"
         echo "removendo versao atual do go"

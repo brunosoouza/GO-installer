@@ -7,17 +7,17 @@ confirguarNovoGo(){
     read -p " padrao: /opt > " opcao
     
     case $opcao in
-    1)  ls|grep go$value.tar.gz | tail -1 | tar -C /opt -xzf
+    1) sudo tar -C /opt -xzf `ls|grep go*.tar.gz | tail -1`
         echo export PATH="$"PATH:/opt/go/bin >> $HOME/.bashrc
         echo export GOPATH=$HOME/go >> $HOME/.bashrc
     ;;
 
-    2)  ls|grep go$value.tar.gz | tail -1 | tar -C /usr/local -xzf
+    2) sudo tar -C /usr/local -xzf `ls|grep go*.tar.gz | tail -1`
         echo export PATH="$"PATH:/usr/local/go/bin >> $HOME/.bashrc
         echo export GOPATH=$HOME/go >> $HOME/.bashrc
     ;;
 
-    *)  ls|grep go$value.tar.gz | tail -1 | tar -C /opt -xzf
+    *) sudo tar -C /opt -xzf `ls|grep go*.tar.gz | tail -1`
         echo export PATH="$"PATH:/opt/go/bin >> $HOME/.bashrc
         echo export GOPATH=$HOME/go >> $HOME/.bashrc
     ;;
@@ -31,10 +31,10 @@ configurarGoEncontrado(){
     read -p " padrao: /opt > " opcao
     
     case $opcao in
-    1)  sudo tar -C /opt -xzf `ls|grep go*.tar.gz | tail -1`
+    1)  sudo tar -C /opt -xzf `ls|grep go*tar.gz | tail -1`
         echo export PATH="$"PATH:/opt/go/bin >> $HOME/.bashrc
         echo export GOPATH=$HOME/go >> $HOME/.bashrc
-        echo "pronto go instalado verifique digitando 'go' no seu terminal"
+        echo "pronto go instalado verifique digitando 'go' em outro terminal"
     ;;
 
     2)  sudo tar -C /usr/local -xzf `ls|grep go*.tar.gz | tail -1`
@@ -54,7 +54,7 @@ configurarGoEncontrado(){
 
 baixarGo(){
     echo tentando baixar go na versao $value
-    wget https://dl.google.com/go/go$value.linux-amd64.tar.gz
+    sudo wget https://dl.google.com/go/go$value.linux-amd64.tar.gz
 
     if [[ $? -eq 0 ]];then
       confirguarNovoGo 
@@ -76,7 +76,7 @@ modulosGo(){
     echo "1.13.10"
     echo "1.14"
     echo "1.14.1"
-    echo -e 1.1"1.14.2\n"
+    echo -e "1.14.2\n"
     modulosGo;;
     *) baixarGo ;;
     esac
@@ -99,11 +99,11 @@ instalarGO(){
         case $instalar in 
         y)configurarGoEncontrado;;
         n)echo "Certo este pacote nao sera instalado"
-        rm go*tar.gz
+        sudo rm -r go*tar.gz
         modulosGo
         ;;
         *)echo "Certo este pacote nao sera instalado"
-        rm go*tar.gz
+        sudo rm -r go*tar.gz
         modulosGo
         ;;
         esac
