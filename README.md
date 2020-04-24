@@ -1,6 +1,6 @@
 # go-installer
 
-![Gopher image](go-icon.svg)
+![Gopher image](Golang.png)
 
 ## A simple way to install golang on linux
 
