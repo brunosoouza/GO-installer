@@ -5,7 +5,7 @@ desinstalarGO(){
     sudo rm -r $localgo
 
     sed -i 's;export PATH=$PATH:'$localgo'/bin;;' ~/.bashrc
-    sed -i 's;export GOPATH=/home/bmatheus/go;;' ~/.bashrc
+    sed -i 's;export GOPATH='~'/go;;' ~/.bashrc
 
 }
 
