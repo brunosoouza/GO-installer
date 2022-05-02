@@ -8,17 +8,17 @@ confirguarNovoGo(){
     
     case $opcao in
     1) sudo tar -C /opt -xzf `ls|grep go*.tar.gz | tail -1`
-        echo export PATH="$"PATH:/opt/go/bin >> $HOME/.bashrc
+        echo export PATH="$"PATH:$HOME/go/bin >> $HOME/.bashrc
         echo export GOPATH=$HOME/go >> $HOME/.bashrc
     ;;
 
     2) sudo tar -C /usr/local -xzf `ls|grep go*.tar.gz | tail -1`
-        echo export PATH="$"PATH:/usr/local/go/bin >> $HOME/.bashrc
+        echo export PATH="$"PATH:$HOME/local/go/bin >> $HOME/.bashrc
         echo export GOPATH=$HOME/go >> $HOME/.bashrc
     ;;
 
     *) sudo tar -C /opt -xzf `ls|grep go*.tar.gz | tail -1`
-        echo export PATH="$"PATH:/opt/go/bin >> $HOME/.bashrc
+        echo export PATH="$"PATH:$HOME/go/bin >> $HOME/.bashrc
         echo export GOPATH=$HOME/go >> $HOME/.bashrc
     ;;
     esac
@@ -32,21 +32,24 @@ configurarGoEncontrado(){
     
     case $opcao in
     1)  sudo tar -C /opt -xzf `ls|grep go*tar.gz | tail -1`
-        echo export PATH="$"PATH:/opt/go/bin >> $HOME/.bashrc
+        echo export PATH="$"PATH:$HOME/go/bin >> $HOME/.bashrc
         echo export GOPATH=$HOME/go >> $HOME/.bashrc
-        echo "pronto go instalado verifique digitando 'go' em outro terminal"
+	source ~/.bashrc
+        echo "pronto, GO instalado"
     ;;
 
     2)  sudo tar -C /usr/local -xzf `ls|grep go*.tar.gz | tail -1`
-        echo export PATH="$"PATH:/usr/local/go/bin >> $HOME/.bashrc
+        echo export PATH="$"PATH:$HOME/local/go/bin >> $HOME/.bashrc
         echo export GOPATH=$HOME/go >> $HOME/.bashrc
-        echo "pronto go instalado verifique digitando 'go' no seu terminal"
+	source ~/.bashrc
+        echo "pronto, GO instalado"
     ;;
 
     *) sudo tar -C /opt -xzf `ls|grep go*.tar.gz | tail -1`
-        echo export PATH="$"PATH:/opt/go/bin >> $HOME/.bashrc
+        echo export PATH="$"PATH:$HOME/go/bin >> $HOME/.bashrc
         echo export GOPATH=$HOME/go >> $HOME/.bashrc
-        echo "pronto go instalado verifique digitando 'go' no seu terminal"
+	source ~/.bashrc
+        echo "pronto, GO instalado"
     ;;
 
     esac
