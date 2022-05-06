@@ -8,17 +8,17 @@ confirguarNovoGo(){
     
     case $opcao in
     1) sudo tar -C /opt -xzf `ls|grep go*.tar.gz | tail -1`
-        echo export PATH="$"PATH:$HOME/go/bin >> $HOME/.bashrc
+        echo export PATH="$"PATH:/opt/go/bin >> $HOME/.bashrc
         echo export GOPATH=$HOME/go >> $HOME/.bashrc
     ;;
 
     2) sudo tar -C /usr/local -xzf `ls|grep go*.tar.gz | tail -1`
-        echo export PATH="$"PATH:$HOME/local/go/bin >> $HOME/.bashrc
+        echo export PATH="$"PATH:/usr/local/go/bin >> $HOME/.bashrc
         echo export GOPATH=$HOME/go >> $HOME/.bashrc
     ;;
 
     *) sudo tar -C /opt -xzf `ls|grep go*.tar.gz | tail -1`
-        echo export PATH="$"PATH:$HOME/go/bin >> $HOME/.bashrc
+        echo export PATH="$"PATH:/opt/go/bin >> $HOME/.bashrc
         echo export GOPATH=$HOME/go >> $HOME/.bashrc
     ;;
     esac
@@ -32,23 +32,23 @@ configurarGoEncontrado(){
     
     case $opcao in
     1)  sudo tar -C /opt -xzf `ls|grep go*tar.gz | tail -1`
-        echo export PATH="$"PATH:$HOME/go/bin >> $HOME/.bashrc
+        echo export PATH="$"PATH:/opt/go/bin >> $HOME/.bashrc
         echo export GOPATH=$HOME/go >> $HOME/.bashrc
-	source ~/.bashrc
+	    source ~/.bashrc
         echo "pronto, GO instalado"
     ;;
 
     2)  sudo tar -C /usr/local -xzf `ls|grep go*.tar.gz | tail -1`
-        echo export PATH="$"PATH:$HOME/local/go/bin >> $HOME/.bashrc
+        echo export PATH="$"PATH:/opt/go/bin >> $HOME/.bashrc
         echo export GOPATH=$HOME/go >> $HOME/.bashrc
-	source ~/.bashrc
+	    source ~/.bashrc
         echo "pronto, GO instalado"
     ;;
 
     *) sudo tar -C /opt -xzf `ls|grep go*.tar.gz | tail -1`
-        echo export PATH="$"PATH:$HOME/go/bin >> $HOME/.bashrc
+        echo export PATH="$"PATH:/opt/go/bin >> $HOME/.bashrc
         echo export GOPATH=$HOME/go >> $HOME/.bashrc
-	source ~/.bashrc
+	    source ~/.bashrc
         echo "pronto, GO instalado"
     ;;
 
@@ -69,7 +69,7 @@ baixarGo(){
 }
 
 modulosGo(){
-    echo "Insira a versao que deseja instalar ex: 1.14 ou"
+    echo "Insira a versao que deseja instalar ex: 1.18.1 ou"
     echo "Digite 0 para listar versoes disponiveis"
     read -p " versao > " value
 
@@ -79,7 +79,7 @@ modulosGo(){
     echo "1.13.10"
     echo "1.14"
     echo "1.14.1"
-    echo -e "1.14.2\n"
+    echo -e "1.18.1\n"
     modulosGo;;
     *) baixarGo ;;
     esac
