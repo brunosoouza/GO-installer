@@ -10,17 +10,20 @@ confirguarNovoGo(){
     1) sudo tar -C /opt -xzf `ls|grep go*.tar.gz | tail -1`
         echo export PATH="$"PATH:/opt/go/bin >> $HOME/.bashrc
         echo export GOPATH=$HOME/go >> $HOME/.bashrc
+        echo export PATH=$(go env GOPATH)/bin:$PATH >> $HOME/.bashrc
     ;;
 
     2) sudo tar -C /usr/local -xzf `ls|grep go*.tar.gz | tail -1`
         echo export PATH="$"PATH:/usr/local/go/bin >> $HOME/.bashrc
         echo export GOPATH=$HOME/go >> $HOME/.bashrc
+        echo export PATH=$(go env GOPATH)/bin:$PATH >> $HOME/.bashrc
     ;;
 
     *) sudo tar -C /opt -xzf `ls|grep go*.tar.gz | tail -1`
         echo export PATH="$"PATH:/opt/go/bin >> $HOME/.bashrc
         echo export GOPATH=$HOME/go >> $HOME/.bashrc
-    ;;
+        echo export PATH=$(go env GOPATH)/bin:$PATH >> $HOME/.bashrc
+        ;;
     esac
 }
 
@@ -34,21 +37,24 @@ configurarGoEncontrado(){
     1)  sudo tar -C /opt -xzf `ls|grep go*tar.gz | tail -1`
         echo export PATH="$"PATH:/opt/go/bin >> $HOME/.bashrc
         echo export GOPATH=$HOME/go >> $HOME/.bashrc
-	    source ~/.bashrc
+        echo export PATH=$(go env GOPATH)/bin:$PATH >> $HOME/.bashrc
+        source ~/.bashrc
         echo "pronto, GO instalado"
     ;;
 
     2)  sudo tar -C /usr/local -xzf `ls|grep go*.tar.gz | tail -1`
         echo export PATH="$"PATH:/opt/go/bin >> $HOME/.bashrc
         echo export GOPATH=$HOME/go >> $HOME/.bashrc
-	    source ~/.bashrc
+        echo export PATH=$(go env GOPATH)/bin:$PATH >> $HOME/.bashrc
+        source ~/.bashrc
         echo "pronto, GO instalado"
     ;;
 
     *) sudo tar -C /opt -xzf `ls|grep go*.tar.gz | tail -1`
         echo export PATH="$"PATH:/opt/go/bin >> $HOME/.bashrc
         echo export GOPATH=$HOME/go >> $HOME/.bashrc
-	    source ~/.bashrc
+        echo export PATH=$(go env GOPATH)/bin:$PATH >> $HOME/.bashrc
+        source ~/.bashrc
         echo "pronto, GO instalado"
     ;;
 

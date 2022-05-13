@@ -6,6 +6,8 @@ desinstalarGO(){
 
     sed -i 's;export PATH=$PATH:.*go/bin;;' ~/.bashrc
     sed -i 's;export GOPATH=.*/go;;' ~/.bashrc
+    sed -i 's;export.*GOPATH)/bin:$PATH;;' ~/.bashrc
+
 
 }
 
