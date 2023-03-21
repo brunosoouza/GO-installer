@@ -1,5 +1,9 @@
 # go-installer
 
+
+# This repository has been deprecated, currently there are better ways to install GO(golang) on ​​linux
+
+
 ![Gopher image](Golang.png)
 
 ## A simple way to install golang on linux
